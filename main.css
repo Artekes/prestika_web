@@ -26,12 +26,17 @@ main {
 	& section {
 		padding: 1rem;
 		background: rgba(255, 255, 255, 0.25);
-		border-radius: 16px;
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		border-radius: 20px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 4px 30px rgba(255, 255, 255, 0.2);
 		display: block;
 		max-width: 42.5vw;
 		backdrop-filter: blur(3.4px);
 		-webkit-backdrop-filter: blur(3.4px);
 		border: 1px solid rgba(255, 255, 255, 0.79);
+
+		& h2 {
+			text-align: center;
+			font-size: 2.5rem;
+		}
 	}
 }
