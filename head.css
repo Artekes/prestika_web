@@ -20,6 +20,33 @@
   --text-primary: #1a1a1a;
   --text-secondary: #555;
   --text-muted: #888;
+
+  /* Barvy z dokumentu */
+
+  --accent-color: #e34b3d;
+
+  --confirm-color: #00bb8e;
+  --warning-color: #ff8d3a;
+  --error-color: #ff3c5f;
+
+  --light-primary-bg: #fcfcfc;
+  --light-secundary-bg: #ffffff;
+  --light-primary-text: #161616;
+  --light-secundary-text: #808080;
+  --light-additional-color: #2346c0;
+  --light-additional-color-contrust: #e9ecf9;
+
+  --dark-primary-bg: #222222;
+  --dark-secundary-bg: #292929;
+  --dark-primary-text: #ffffff;
+  --dark-secundary-text: #808080;
+  --dark-additional-color: #6278c6;
+  --dark-additional-color-contrust: #282f47;
+
+  --bdrs-low: 4px;
+  --bdrs-medium: 8px;
+  --bdrs-hard: 16px;
+  --bdrs-full: 999px;
 }
 
 * {
