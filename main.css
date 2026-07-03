@@ -1,14 +1,5 @@
-body {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-
 main {
 	position: relative;
-	margin-top: 6rem;
-	padding: 2.5rem;
 
 	& h1 {
 		text-align: center;

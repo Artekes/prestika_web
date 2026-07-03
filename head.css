@@ -1,29 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --main-color: #f76108;
-  --main-color-light: rgba(247, 97, 8, 0.08);
-  --main-color-hover: #c44e00;
-
   --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-blur: blur(12px);
   --glass-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
 
-  --radius-sm: 8px;
-  --radius-md: 14px;
-
   --header-height: 4rem;
   --nav-height: 3rem;
   --nav-width: 220px;
 
-  --text-primary: #1a1a1a;
-  --text-secondary: #555;
-  --text-muted: #888;
-
-  /* Barvy z dokumentu */
+  /*============================
+      Informace z dokumentu 
+  ==============================*/
 
   --accent-color: #e34b3d;
+  --accent-color-light: rgba(227, 75, 61, 0.08);
+  --accent-color-hover: #df3020;
 
   --confirm-color: #00bb8e;
   --warning-color: #ff8d3a;
@@ -32,12 +25,12 @@
   --light-primary-bg: #fcfcfc;
   --light-secundary-bg: #ffffff;
   --light-primary-text: #161616;
-  --light-secundary-text: #808080;
+  --light-secondary-text: #808080;
   --light-additional-color: #2346c0;
   --light-additional-color-contrust: #e9ecf9;
 
   --dark-primary-bg: #222222;
-  --dark-secundary-bg: #292929;
+  --dark-secondary-bg: #292929;
   --dark-primary-text: #ffffff;
   --dark-secundary-text: #808080;
   --dark-additional-color: #6278c6;
@@ -59,7 +52,7 @@
 html,
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f76108 0%, #ff8c3a 100%);
+  background: linear-gradient(135deg, var(--light-primary-bg) 0%, var(--light-secondary-bg) 100%);
 }
 
 /*==========================
@@ -101,16 +94,16 @@ header {
 header label {
   display: none;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: var(--light-secondary-text);
   font-size: 1.25rem;
   padding: .4rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--bdrs-medium);
   transition: .2s;
 }
 
 header label:hover {
-  background: var(--main-color-light);
-  color: var(--main-color);
+  background: var(--accent-color-light);
+  color: var(--accent-color);
 }
 
 header img {
@@ -120,7 +113,7 @@ header img {
 .header-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--main-color);
+  color: var(--accent-color);
 }
 
 /*==========================
@@ -158,22 +151,22 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: var(--text-secondary);
+  color: var(--light-secondary-text);
   font-size: .95rem;
   padding: .5rem .8rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--bdrs-medium);
   transition: .2s;
   white-space: nowrap;
 }
 
 nav a:hover {
-  background: var(--main-color-light);
-  color: var(--main-color);
+  background: var(--accent-color-light);
+  color: var(--accent-color);
 }
 
 nav a.aktualni {
-  background: var(--main-color-light);
-  color: var(--main-color-hover);
+  background: var(--accent-color-light);
+  color: var(--accent-color-hover);
   font-weight: 600;
 }
 
