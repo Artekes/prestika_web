@@ -119,6 +119,7 @@ header img {
 /*==========================
   NAV DESKTOP
 ==========================*/
+.mobile-nav {display: none}
 
 nav {
   position: fixed;
@@ -142,7 +143,29 @@ nav {
   border-bottom: .5px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
 
-  z-index: 15;
+  z-index: 15; 
+
+  /*======================================
+  TODO: FIX BUG
+  <ul> rozšiřuje <nav> misto toho, aby udělal owerflow.
+  Hover na <li>
+  ========================================*/
+
+  & ul.vedlejsi {
+    display: none;
+  }
+
+  & li{
+    display: inline-block;
+
+    &:hover ul.vedlejsi {
+      display: block;
+
+      & li {
+        display: block; /* Spaghetti code :)*/
+      }
+    }
+  }
 }
 
 #close-nav {
@@ -211,6 +234,9 @@ footer {
 ==========================*/
 
 @media (max-width:768px) {
+
+  .mobile-nav {display: flex}
+  .pc-nav {display: none}
 
   header label {
     display: flex;
