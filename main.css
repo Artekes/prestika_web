@@ -1,5 +1,6 @@
 main {
-	position: relative;
+	min-height: fit-content;
+	max-height: calc(100% - 12rem);
 
 	& h1 {
 		text-align: center;
@@ -15,19 +16,76 @@ main {
 	}
 
 	& section {
-		padding: 1rem;
-		background: rgba(255, 255, 255, 0.25);
+		background: #ffffff;
+		position: relative;
 		border-radius: 20px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 4px 30px rgba(255, 255, 255, 0.2);
-		display: block;
-		max-width: 42.5vw;
+		display: grid;
+		place-items: center;
+		gap: 0.5rem;
+		/*max-width: 42.5vw;*/
+		height: fit-content;
 		backdrop-filter: blur(3.4px);
 		-webkit-backdrop-filter: blur(3.4px);
-		border: 1px solid rgba(255, 255, 255, 0.79);
+		/*border: 1px solid rgba(255, 255, 255, 0.79);*/
+		color: var(--light-secondary-text);
+		margin-bottom: 2.5rem;
+		text-align: center;
+
+		& div {
+			width: 100%;
+			background: #fff;
+			padding: 1rem;
+			border-radius: 20px;
+		}
 
 		& h2 {
-			text-align: center;
 			font-size: 2.5rem;
+			color: var(--light-primary-text);
 		}
+
+		& button {
+			background-color: var(--light-additional-color);
+			padding: 0.5rem;
+			border: 2px solid var(--light-additional-color-contrust);
+			border-radius: var(--bdrs-hard);
+			font-size: 1.25rem;
+			color: var(--light-additional-color-contrust);
+			cursor: pointer;
+			margin: 0 auto;
+		}
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			width: calc(100%);
+			height: calc(100%);
+			z-index: -1;
+			border-radius: 20px;
+			padding: 3px;
+			background: conic-gradient(from var(--angle), var(--accent-color) 0% 25%, transparent 25% 50%, var(--accent-color) 50% 75%, transparent 75%);
+			animation: spin 5s linear infinite;
+		}
+
+		&:after {
+			filter: blur(1rem);
+		}
+
+		&.first-delay:after, &.first-delay:before {
+			animation-delay: 250ms;
+		}
+	}
+}
+
+@property --angle{
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+@keyframes spin{
+	0% {
+		--angle: 0deg;
+	} 100% {
+		--angle: 360deg;
 	}
 }
