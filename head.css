@@ -117,6 +117,34 @@ header img {
   color: var(--accent-color);
 }
 
+header .dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: default;
+
+  & .dropdown-content {
+    position: fixed;
+    max-width: 30%;
+    text-align: center;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+
+    border-bottom: .5px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--bdrs-hard);
+    padding: .5rem;
+    font-size: 1.05rem;
+    color: var(--light-primary-text);
+    translate: -25% -150%;
+    transition: 500ms;
+  }
+
+  &:hover .dropdown-content {
+    translate: -25% 0%;
+  }
+}
+
 /*==========================
   NAV DESKTOP
 ==========================*/

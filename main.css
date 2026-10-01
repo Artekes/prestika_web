@@ -63,7 +63,7 @@ main {
 			border-radius: 20px;
 			padding: 3px;
 			background: conic-gradient(from var(--angle), var(--accent-color) 0% 25%, transparent 25% 50%, var(--accent-color) 50% 75%, transparent 75%);
-			animation: spin 5s linear infinite;
+			animation: spin 20s linear infinite;
 		}
 
 		&:after {
@@ -71,7 +71,7 @@ main {
 		}
 
 		&.first-delay:after, &.first-delay:before {
-			animation-delay: 250ms;
+			animation-delay: 1s;
 		}
 	}
 }
