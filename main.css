@@ -1,6 +1,10 @@
 main {
 	min-height: fit-content;
 	max-height: calc(100% - 12rem);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	gap: 0.5rem;
 
 	& h1 {
 		text-align: center;
@@ -18,18 +22,19 @@ main {
 	& section {
 		background: #ffffff;
 		position: relative;
-		border-radius: 20px;
+		border-radius: var(--bdrs-hard);
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 4px 30px rgba(255, 255, 255, 0.2);
 		display: grid;
 		place-items: center;
 		gap: 0.5rem;
-		/*max-width: 42.5vw;*/
+		max-width: 42.5vw;	
 		height: fit-content;
+		--height: fit-content;
 		backdrop-filter: blur(3.4px);
 		-webkit-backdrop-filter: blur(3.4px);
 		/*border: 1px solid rgba(255, 255, 255, 0.79);*/
 		color: var(--light-secondary-text);
-		margin-bottom: 2.5rem;
+		margin-bottom: 5.5rem;
 		text-align: center;
 
 		& div {
@@ -73,6 +78,12 @@ main {
 		&.first-delay:after, &.first-delay:before {
 			animation-delay: 1s;
 		}
+
+	}
+	section + video {
+		width: 42.5vw;
+		/*max-height: var(--height);*/
+		border-radius: var(--bdrs-hard);
 	}
 }
 
@@ -80,6 +91,12 @@ main {
 	syntax: "<angle>";
 	initial-value: 0deg;
 	inherits: false;
+}
+
+@property --height {
+	syntax: "<length>";
+	inherits: true;
+	initial-value: 500px;
 }
 
 @keyframes spin{
