@@ -425,6 +425,18 @@ p {
   border-radius: var(--radius-medium);
 }
 
+.product-lightbox-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-lightbox-link:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: -4px;
+  border-radius: var(--radius-medium);
+}
+
 .product img {
   width: 100%;
   height: 100%;
@@ -485,6 +497,37 @@ p {
   margin: 16px 0 0;
   color: var(--soft-text);
   font-size: 0.73rem;
+}
+
+/* Keep GLightbox captions readable and consistent with both site themes. */
+.glightbox-container .goverlay {
+  background: var(--light-primary-bg) !important;
+}
+
+.glightbox-container .gslide-description {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--line-color) !important;
+}
+
+.glightbox-container .gdesc-inner {
+  padding: 15px 20px;
+}
+
+.glightbox-container .gslide-title {
+  margin: 0 0 5px;
+  color: var(--light-primary-text) !important;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.glightbox-container .gslide-desc {
+  margin: 0;
+  color: var(--light-secondary-text) !important;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
 /* The catalog card reserves space for the future downloadable PDF. */
@@ -890,6 +933,12 @@ p {
     padding: 14px 22px;
   }
 
+  .site-header > .site-nav .theme-toggle {
+    position: absolute;
+    top: 14px;
+    right: 22px;
+  }
+
   .brand {
     width: 125px;
   }
@@ -949,7 +998,12 @@ p {
 
   .product-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 210px 210px 210px;
+    grid-template-rows: repeat(2, 210px);
+  }
+
+  .product-large,
+  .product-tall {
+    grid-row: auto;
   }
 
   .product-short {
@@ -996,6 +1050,8 @@ p {
 
 @media (max-width: 480px) {
   .site-nav {
+    min-width: 0;
+    max-width: 100%;
     gap: 5px 8px;
   }
 
@@ -1018,7 +1074,7 @@ p {
   }
 
   .product-grid {
-    grid-template-rows: 175px 175px 175px;
+    grid-template-rows: repeat(2, 175px);
     gap: 9px;
   }
 

@@ -11,6 +11,17 @@ if (catalogDownload) {
   }
 }
 
+if (typeof GLightbox === "function") {
+  GLightbox({
+    selector: ".product-lightbox-link",
+    touchNavigation: true,
+    keyboardNavigation: true,
+    loop: false,
+    moreLength: 0,
+    descPosition: "bottom",
+  });
+}
+
 function setTheme(isDark) {
   const theme = isDark ? "dark" : "light";
   document.documentElement.dataset.theme = theme;

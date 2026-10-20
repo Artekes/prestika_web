@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#fcfcfc">
   <title>Prestika — od nápadu k realizaci</title>
   <link rel="icon" href="img/prestika-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="head.css">
   <link rel="stylesheet" href="main.css">
   <script>
@@ -16,6 +17,7 @@
       }
     } catch (_) {}
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js" defer></script>
   <script src="theme.js" defer></script>
 </head>
 <body>
@@ -91,10 +93,30 @@
         <p>Každý projekt začíná nápadem. Tady je pár podob, které už dostal — a ta vaše může být další.</p>
       </div>
       <div class="product-grid">
-        <figure class="product product-large"><img src="img/produkt-otvirak.jpg" alt="Oranžový otvírák vyrobený na zakázku"><figcaption><span>Každodenní parťák</span><b>Otvíráky</b></figcaption></figure>
-        <figure class="product product-tall"><img src="img/produkt-placka.jpg" alt="Placka s výrazným grafickým motivem"><figcaption><span>Malý formát, velký nápad</span><b>Placky</b></figcaption></figure>
-        <figure class="product product-large"><img src="img/produkt-podtacek.jpg" alt="Zakázkový podtácek v oranžové barvě"><figcaption><span>Detail, co potěší</span><b>Podtácky</b></figcaption></figure>
-        <figure class="product product-tall product-dark"><img src="img/produkt-drzak.jpg" alt="Barevný držák telefonu vyrobený 3D tiskem"><figcaption><span>Užitečné a po svém</span><b>3D tisk</b></figcaption></figure>
+        <figure class="product product-large">
+          <a class="product-lightbox-link" href="img/produkt-otvirak.jpg" data-gallery="prestika-products" data-title="Otvíráky" data-description="Praktický otvírák z 3D tisku. Barvu i tvar lze přizpůsobit vašemu nápadu.">
+            <img src="img/produkt-otvirak.jpg" alt="Oranžový otvírák vyrobený na zakázku">
+          </a>
+          <figcaption><span>Každodenní parťák</span><b>Otvíráky</b></figcaption>
+        </figure>
+        <figure class="product product-tall">
+          <a class="product-lightbox-link" href="img/produkt-placka.jpg" data-gallery="prestika-products" data-title="Placky" data-description="Placka s vlastním motivem nebo logem — malý předmět, který může nést vaše sdělení.">
+            <img src="img/produkt-placka.jpg" alt="Placka s výrazným grafickým motivem">
+          </a>
+          <figcaption><span>Malý formát, velký nápad</span><b>Placky</b></figcaption>
+        </figure>
+        <figure class="product product-large">
+          <a class="product-lightbox-link" href="img/produkt-podtacek.jpg" data-gallery="prestika-products" data-title="Podtácky" data-description="Zakázkový podtácek s vlastním motivem, vyrobený pro každodenní používání i jako dárek.">
+            <img src="img/produkt-podtacek.jpg" alt="Zakázkový podtácek v oranžové barvě">
+          </a>
+          <figcaption><span>Detail, co potěší</span><b>Podtácky</b></figcaption>
+        </figure>
+        <figure class="product product-tall product-dark">
+          <a class="product-lightbox-link" href="img/produkt-drzak.jpg" data-gallery="prestika-products" data-title="Držák telefonu z 3D tisku" data-description="Lehký držák telefonu vytvořený 3D tiskem. Rozměry a barvu lze upravit podle potřeby.">
+            <img src="img/produkt-drzak.jpg" alt="Barevný držák telefonu vyrobený 3D tiskem">
+          </a>
+          <figcaption><span>Užitečné a po svém</span><b>3D tisk</b></figcaption>
+        </figure>
       </div>
       <p class="product-note">Ukázky z produktové kolekce Prestika. Konkrétní provedení přizpůsobíme domluvě.</p>
       <!-- Doplňte cestu k souboru PDF do href, až bude katalog připravený. -->
