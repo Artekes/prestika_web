@@ -1,6 +1,15 @@
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = themeToggle?.querySelector("span");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const catalogDownload = document.querySelector(".catalog-download");
+
+if (catalogDownload) {
+  const hasCatalog = Boolean(catalogDownload.getAttribute("href"));
+  catalogDownload.setAttribute("aria-disabled", String(!hasCatalog));
+  if (!hasCatalog) {
+    catalogDownload.addEventListener("click", (event) => event.preventDefault());
+  }
+}
 
 function setTheme(isDark) {
   const theme = isDark ? "dark" : "light";

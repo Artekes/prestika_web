@@ -518,13 +518,36 @@ p {
   line-height: 1.7;
 }
 
-.catalog-status {
-  padding-left: 18px;
-  color: var(--light-secondary-text);
-  border-left: 1px solid var(--line-color);
-  font-size: 0.76rem;
+.catalog-download {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  color: white;
+  background: var(--light-additional-color);
+  border: 1px solid var(--light-additional-color);
+  border-radius: var(--radius-small);
+  font-size: 0.82rem;
   font-weight: 700;
   white-space: nowrap;
+  text-decoration: none;
+  transition: filter 0.18s ease, opacity 0.18s ease, outline-color 0.18s ease;
+}
+
+.catalog-download:hover {
+  filter: brightness(0.9);
+}
+
+.catalog-download:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.catalog-download[aria-disabled="true"] {
+  opacity: 0.68;
+  cursor: pointer;
 }
 
 /* The company story combines the mark and its explanatory copy. */
@@ -965,9 +988,8 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .catalog-status {
-    padding-left: 0;
-    border-left: 0;
+  .catalog-download {
+    justify-self: start;
   }
 
 }
