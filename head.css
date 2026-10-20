@@ -1,318 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-
+/* Základní tokeny projektu: barvy vycházejí z palety v původním head.css. */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-border: rgba(255, 255, 255, 0.6);
-  --glass-blur: blur(12px);
-  --glass-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-
-  --header-height: 4rem;
-  --nav-height: 3rem;
-  --nav-width: 220px;
-  --main-height: calc(100vh - var(--header-height) - var(--nav-height));;
-
-  /*============================
-      Informace z dokumentu 
-  ==============================*/
-
+  color-scheme: light;
   --accent-color: #e34b3d;
   --accent-color-light: rgba(227, 75, 61, 0.08);
   --accent-color-hover: #df3020;
-
   --confirm-color: #00bb8e;
   --warning-color: #ff8d3a;
   --error-color: #ff3c5f;
-
   --light-primary-bg: #fcfcfc;
-  --light-secundary-bg: #ffffff;
+  --light-secondary-bg: #ffffff;
   --light-primary-text: #161616;
-  --light-secondary-text: #808080;
+  --light-secondary-text: #686868;
   --light-additional-color: #2346c0;
-  --light-additional-color-contrust: #e9ecf9;
-
+  --light-additional-color-contrast: #e9ecf9;
   --dark-primary-bg: #222222;
   --dark-secondary-bg: #292929;
   --dark-primary-text: #ffffff;
-  --dark-secundary-text: #808080;
+  --dark-secondary-text: #808080;
   --dark-additional-color: #6278c6;
-  --dark-additional-color-contrust: #282f47;
+  --dark-additional-color-contrast: #282f47;
+  --surface: #ffffff;
+  --surface-muted: #f3f4f9;
+  --surface-warm: #f8e3df;
+  --surface-product: #f4e9e6;
+  --surface-product-cool: #e9ecf9;
+  --surface-deep: #252c45;
+  --line-color: #e2e4ec;
+  --soft-text: #92929a;
+  --header-background: rgba(255, 255, 255, 0.94);
 
-  --bdrs-low: 4px;
-  --bdrs-medium: 8px;
-  --bdrs-hard: 16px;
-  --bdrs-full: 999px;
+  /* Rozměry a křivky držíme pohromadě, aby šly snadno upravit napříč webem. */
+  --page-width: 1160px;
+  --radius-small: 8px;
+  --radius-medium: 18px;
+  --radius-large: 30px;
+  --shadow-card: 0 16px 48px rgba(35, 70, 192, 0.08);
+  --font-body: "Outfit", "Avenir Next", Avenir, system-ui, sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Outfit", system-ui, sans-serif;
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --light-primary-bg: var(--dark-primary-bg);
+  --light-secondary-bg: var(--dark-secondary-bg);
+  --light-primary-text: #f3f4f7;
+  --light-secondary-text: #b9bdc9;
+  --light-additional-color: var(--dark-additional-color);
+  --light-additional-color-contrast: var(--dark-additional-color-contrast);
+  --accent-color-light: rgba(227, 75, 61, 0.14);
+  --surface: #292d37;
+  --surface-muted: #20232b;
+  --surface-warm: #382d30;
+  --surface-product: #302b2d;
+  --surface-product-cool: #292e40;
+  --surface-deep: #252c45;
+  --line-color: #3d424e;
+  --soft-text: #a5a9b5;
+  --header-background: rgba(34, 34, 34, 0.94);
+  --shadow-card: 0 16px 48px rgba(0, 0, 0, 0.24);
 }
 
-html,
-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--light-primary-bg) 0%, var(--light-secondary-bg) 100%);
-}
-
-/*==========================
-  TOGGLE
-==========================*/
-
-#nav-opener {
-  display: none;
-}
-
-/*==========================
-  HEADER
-==========================*/
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  height: var(--header-height);
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  padding: 0 1.25rem;
-
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-
-  border-bottom: .5px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-
-  z-index: 20;
-}
-
-header label {
-  display: none;
-  cursor: pointer;
-  color: var(--light-secondary-text);
-  font-size: 1.25rem;
-  padding: .4rem;
-  border-radius: var(--bdrs-medium);
-  transition: .2s;
-}
-
-header label:hover {
-  background: var(--accent-color-light);
-  color: var(--accent-color);
-}
-
-header img {
-  height: 2.5rem;
-}
-
-.header-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--accent-color);
-}
-
-header .dropdown {
-  display: inline-block;
-  position: relative;
-  cursor: default;
-
-  & .dropdown-content {
-    position: fixed;
-    max-width: 30%;
-    text-align: center;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-
-    border-bottom: .5px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: var(--bdrs-hard);
-    padding: .5rem;
-    font-size: 1.05rem;
-    color: var(--light-primary-text);
-    translate: -25% -150%;
-    transition: 500ms;
-  }
-
-  &:hover .dropdown-content {
-    translate: -25% 0%;
-  }
-}
-
-/*==========================
-  NAV DESKTOP
-==========================*/
-.mobile-nav {display: none}
-
-nav {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  right: 0;
-
-  height: var(--nav-height);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .5rem;
-
-  padding: 0 1rem;
-
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-
-  border-bottom: .5px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-
-  z-index: 15; 
-
-  /*======================================
-  TODO: FIX BUG
-  <ul> rozšiřuje <nav> misto toho, aby udělal owerflow.
-  Hover na <li>
-  ========================================*/
-
-  & ul.vedlejsi {
-    display: none;
-  }
-
-  & li{
-    display: inline-block;
-
-    &:hover ul.vedlejsi {
-      display: block;
-
-      & li {
-        display: block; /* Spaghetti code :)*/
-      }
-    }
-  }
-}
-
-#close-nav {
-  display: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--light-secondary-text);
-  font-size: .95rem;
-  padding: .5rem .8rem;
-  border-radius: var(--bdrs-medium);
-  transition: .2s;
-  white-space: nowrap;
-}
-
-nav a:hover {
-  background: var(--accent-color-light);
-  color: var(--accent-color);
-}
-
-nav a.aktualni {
-  background: var(--accent-color-light);
-  color: var(--accent-color-hover);
-  font-weight: 600;
-}
-
-/*==========================
-  MAIN
-==========================*/
-
-main {
-  position: relative;
-  top: calc(var(--header-height) + var(--nav-height));
-  padding: 2rem;
-  min-height: var(--main-height)
-}
-
-/*==========================
-  FOOTER
-==========================*/
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  padding: .5rem;
-
-  text-align: center;
-
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-
-  border-top: .5px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-}
-
-.mta {
-  height: 5rem;
-}
-
-/*==========================
-  MOBIL
-==========================*/
-
-@media (max-width:768px) {
-
-  .mobile-nav {display: flex}
-  .pc-nav {display: none}
-
-  header label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  nav {
-    top: var(--header-height);
-    left: 0;
-    right: auto;
-    bottom: 0;
-
-    width: var(--nav-width);
-    height: auto;
-
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-
-    gap: .25rem;
-    padding: .75rem;
-
-    border-right: .5px solid var(--glass-border);
-    border-bottom: none;
-
-    transform: translateX(-100%);
-    transition: transform .35s ease;
-  }
-
-  #nav-opener:checked~nav {
-    transform: translateX(0);
-  }
-
-  #nav-opener:checked~nav>#close-nav {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-  }
-
-  nav a {
-    padding: .75rem;
-  }
-
-  main {
-    margin-top: var(--header-height);
-  }
+/* Respektujeme nastavení omezeného pohybu v operačním systému. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

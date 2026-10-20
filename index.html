@@ -1,104 +1,189 @@
-<!-- ========================= --> 
-<!-- index.html - Úvodní stránka --> 
-<!-- ========================= --> 
-<!DOCTYPE html> 
-<html lang="cs"> 
-<head> 
-	<meta charset="UTF-8"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<title>Prestika</title> 
-	<link rel="stylesheet" href="head.css">
-	<link rel="stylesheet" href="main.css">
-	<script src="https://kit.fontawesome.com/7e2c6aaa62.js" crossorigin="anonymous"></script>
-</head> 
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prestika propojuje tvorbu webů, rezervačních systémů a kreativní výrobu na míru.">
+  <meta name="theme-color" content="#fcfcfc">
+  <title>Prestika — od nápadu k realizaci</title>
+  <link rel="icon" href="img/prestika-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="head.css">
+  <link rel="stylesheet" href="main.css">
+  <script>
+    try {
+      if (localStorage.getItem("prestika-theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch (_) {}
+  </script>
+  <script src="theme.js" defer></script>
+</head>
 <body>
-  <input type="checkbox" id="nav-opener">
-  
-  <header>
-    <label for="nav-opener"><i class="fa-solid fa-bars"></i></label>
-    <a href="index.html"><img src="img/logo.png" alt="Logo firmy"></a>
-    <span class="header-title">Prestika</span>
-    <div class="dropdown">
-	    <span>„Z nuly na jedničku v kódu i v designu.“</span>
-	    <div class="dropdown-content">
-	    	<p>Spojili jsme to, co nás ve škole baví, do jedné studentské firmy. Nuly s jedničkami
-jsou náš svět. Rádi vám pomůžeme vyrůst v online i offline prostředí. V digitálním
-světě pro vás od nuly postavíme přehledný web nebo funkční rezervační systém. V
-tom reálném pak vezmeme nápady a proměníme je v originální 3D tisk, gravírované
-dřevo nebo potištěné hrnky a placky. Baví nás spojovat technologii s čistým
-designem.</p>
-	    </div>
-	  </div>
+  <!-- Hlavička obsahuje značku a jednoduchou navigaci po sekcích jedné stránky. -->
+  <header class="site-header">
+    <a class="brand" href="#domu" aria-label="Prestika — úvodní stránka">
+      <img src="img/prestika-logo.svg" alt="Prestika">
+    </a>
+    <nav class="site-nav" aria-label="Hlavní navigace">
+      <a href="#nabidka">Co umíme</a>
+      <a href="#produkty">Výrobky</a>
+      <a href="#historie">Příběh</a>
+      <a href="#katalog">Katalog</a>
+      <a class="nav-cta" href="#kontakt">Spojme se <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" aria-label="Přepnout na tmavý režim" aria-pressed="false" title="Přepnout na tmavý režim"><span aria-hidden="true">☾</span></button>
+    </nav>
   </header>
 
-  <nav class="pc-nav">
-  	<ul>
-  		<li>
-  			<a href="">Úvod</a>
-  		</li>
-  		<li>
-		    <a href="o-nas.html">O nás</a>
-  			<ul class="vedlejsi">
-  				<li>
-				    <a href="galerie.html">Fotogalerie</a>
-  				</li>
-  			</ul>
-  		</li>
-  		<li>
-  		  <a href="produkty.html">Produkty a služby</a>
-  		  <ul class="vedlejsi">
-  		  	<li>
-				    <a href="katalog.html">Katalog</a>
-  		  	</li>
-  		  	<li>
-				    <a href="marketing.html">Marketing</a>
-  		  	</li>
-  		  </ul>
-  		</li>
-  		<li>
-		    <a href="reference.html">Reference</a>
-  		</li>
-  		<li>
-		    <a href="kontakt.html">Kontakt</a>
-  		</li>
-  	</ul>
-  </nav>
-  <nav class="mobile-nav">
-    <a href="index.html" class="aktualni">Úvod</a>
-    <a href="o-nas.html">O nás</a>
-    <a href="produkty.html">Produkty a služby</a>
-    <a href="katalog.html">Katalog</a>
-    <a href="marketing.html">Marketing</a>
-    <a href="reference.html">Reference</a>
-    <a href="galerie.html">Fotogalerie</a>
-    <a href="aktuality.html">Aktuality</a>
-    <a href="kontakt.html">Kontakt</a>
-		<label for="nav-opener" id="close-nav"></label>
-  </nav>
-	<main> 
-		<!-- <img src="img/uvodni-foto.jpg" alt="Úvodní fotografie" class="uvodni-foto">  -->
-		<!-- Krátké představení firmy --> 
-		<section class="first-delay"> 
-			<div class="wrapper">
-				<h2>O firmě</h2>
-				<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus blanditiis, deserunt rem officia odio aliquid earum non accusantium quo neque doloribus quisquam molestias nam vel excepturi quia nostrum pariatur repudiandae voluptatibus impedit dolorum, voluptatem culpa ea optio. Quasi, similique obcaecati eligendi excepturi nisi blanditiis perspiciatis earum natus, itaque at mollitia praesentium hic in non expedita qui ducimus laudantium tenetur aliquid et nulla molestias quis, molestiae. Praesentium, voluptate tempore eos id. Mollitia ea nesciunt nam harum eius quisquam odio sint accusamus, repellat, dolores vel assumenda atque alias culpa esse molestias doloribus vero quia tempore, animi illo quidem facilis reiciendis fugiat enim. Dolor ratione, illum eaque assumenda suscipit illo quae quaerat itaque commodi odio iusto nobis perferendis reiciendis voluptas vel quos nam impedit blanditiis debitis minima. Earum, iure? Maiores, nulla magnam, quas odit beatae nostrum. Aut ipsum, velit distinctio ad necessitatibus ut modi quae quas, nemo nesciunt. Ducimus iure consectetur, quidem recusandae impedit, mollitia possimus nostrum obcaecati qui ipsum illo vitae consequatur facere ut assumenda commodi a distinctio, voluptates? In molestias, laudantium perspiciatis ipsam. Laboriosam rerum sed officia quo doloremque nam, deserunt iure corporis, quisquam. Quisquam beatae exercitationem totam quasi atque vero, iure! Explicabo ea, accusamus, et in impedit aliquid quos consectetur. </p> 
-			</div>
-		</section> 
-		<!-- Odkaz na produkty --> 
-		<section>
-			<div class="wrapper">
-				<h2>Naše nabídka</h2> 
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cupiditate, mollitia delectus aliquam magni ullam quia alias soluta sunt impedit ratione in fugiat quae, maxime recusandae illum inventore repellat labore fuga dolores. Nihil deserunt voluptatem optio in magnam non tempore, veritatis necessitatibus delectus consequatur, eligendi tenetur ut inventore consectetur illo! Quas nemo sint harum repellendus vero eveniet iste placeat cupiditate explicabo, animi consequatur, eum voluptates sunt maiores minima blanditiis suscipit nesciunt optio veritatis laboriosam quia rem accusantium corporis? Quae deleniti, ad nam a autem ducimus obcaecati, ipsum magni hic sequi consequatur ea consequuntur, quas animi nisi, atque unde voluptate officia.</p>
-				<a href="produkty.html"> 
-				 	<button>Produkty a služby</button> 
-				</a> 
-			</div>
-		</section> 
-	</main>
-	
-	<!-- Patička stránky s logy sponzorů -->
-	<footer>
-		<img src="img/mta.png" alt="" class="mta">
-	</footer>
-</body> 
+  <main>
+    <!-- Úvodní sdělení přebírá slogan a vysvětlující text ze zadání webu. -->
+    <section class="hero" id="domu" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Studentská firma · založena 2023</p>
+        <h1 id="hero-title">Z nuly na jedničku<br>v kódu i v <span>designu.</span></h1>
+        <p class="hero-lead">Pomáháme dobrým nápadům dostat se do světa — online i v podobě věcí, na které si můžete sáhnout.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#nabidka">Prozkoumat nabídku <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#o-nas">Poznejte Prestiku <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero-note">Od prvního návrhu až po hotový produkt.</p>
+      </div>
+      <!-- Produktová fotografie dodává úvodu konkrétní ukázku práce Prestiky. -->
+      <!-- Autentická fotografie studentů z dodaného archivu CzechSkills 2026. -->
+      <figure class="hero-art">
+        <img src="img/hero-team.jpg" alt="Dva studenti u svého prezentačního stánku na CzechSkills 2026">
+        <figcaption>Studentský tým v akci <span>· CzechSkills 2026</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- Tři karty rychle vysvětlují hlavní oblasti nabídky. -->
+    <section class="section offer-section" id="nabidka" aria-labelledby="offer-title">
+      <div class="section-heading">
+        <p class="eyebrow">Od digitálu po hmatatelné</p>
+        <h2 id="offer-title">Jeden tým.<br><span>Spousta možností.</span></h2>
+        <p>Technologie a čistý design propojujeme v řešeních, která dávají smysl.</p>
+      </div>
+      <div class="offer-grid">
+        <article class="offer-card offer-card-blue">
+          <div class="card-topline"><span>01 / ONLINE</span></div>
+          <div><h3>Weby & systémy</h3><p>Přehledné webové stránky a funkční rezervační systémy navržené podle vašich potřeb.</p></div>
+          <a href="#kontakt" aria-label="Poptat tvorbu webu nebo systému">Probrat projekt <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="offer-card offer-card-orange">
+          <div class="card-topline"><span>02 / VÝROBA</span></div>
+          <div><h3>3D tisk & gravírování</h3><p>Proměníme návrh ve věc. Tiskneme na 3D tiskárně a gravírujeme do dřeva.</p></div>
+          <a href="#produkty" aria-label="Prohlédnout ukázky výrobků">Prohlédnout výrobky <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="offer-card offer-card-cream">
+          <div class="card-topline"><span>03 / REKLAMA</span></div>
+          <div><h3>Potisk & dárky</h3><p>Originální hrnky, placky a další reklamní předměty, které nesplynou s davem.</p></div>
+          <a href="#kontakt" aria-label="Domluvit reklamní předměty">Vymyslet něco spolu <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Fotografie z dodaného produktového archivu ukazují reálné výrobky. -->
+    <section class="section products-section" id="produkty" aria-labelledby="products-title">
+      <div class="products-intro">
+        <div>
+          <p class="eyebrow">Malá ochutnávka</p>
+          <h2 id="products-title">Nápady, které<br><span>už existují.</span></h2>
+        </div>
+        <p>Každý projekt začíná nápadem. Tady je pár podob, které už dostal — a ta vaše může být další.</p>
+      </div>
+      <div class="product-grid">
+        <figure class="product product-large"><img src="img/produkt-otvirak.jpg" alt="Oranžový otvírák vyrobený na zakázku"><figcaption><span>Každodenní parťák</span><b>Otvíráky</b></figcaption></figure>
+        <figure class="product product-tall"><img src="img/produkt-placka.jpg" alt="Placka s výrazným grafickým motivem"><figcaption><span>Malý formát, velký nápad</span><b>Placky</b></figcaption></figure>
+        <figure class="product product-large"><img src="img/produkt-podtacek.jpg" alt="Zakázkový podtácek v oranžové barvě"><figcaption><span>Detail, co potěší</span><b>Podtácky</b></figcaption></figure>
+        <figure class="product product-tall product-dark"><img src="img/produkt-drzak.jpg" alt="Barevný držák telefonu vyrobený 3D tiskem"><figcaption><span>Užitečné a po svém</span><b>3D tisk</b></figcaption></figure>
+      </div>
+      <p class="product-note">Ukázky z produktové kolekce Prestika. Konkrétní provedení přizpůsobíme domluvě.</p>
+      <!-- Po dodání PDF nahraďte stavový text odkazem ke stažení souboru. -->
+      <div class="catalog-card" id="katalog">
+        <div>
+          <h3>Katalog produktů</h3>
+          <p>Katalog připravujeme. Až bude hotový, stáhnete si ho odsud.</p>
+          <p class="catalog-summary">Otvíráky · Podtácky · Placky · Přívěsky · Držáky telefonů · Mince · Motýlky · QR produkty · Hrnky a dárky</p>
+        </div>
+        <span class="catalog-status">PDF připravujeme</span>
+      </div>
+    </section>
+
+    <!-- Historie vychází z podkladů školy a dobových zpráv o činnosti Prestiky. -->
+    <section class="history-section" id="historie" aria-labelledby="history-title">
+      <div class="history-heading">
+        <p class="eyebrow">Náš příběh</p>
+        <h2 id="history-title">Od školního nápadu<br><span>k firmě v praxi.</span></h2>
+        <p>Prestika je školní firma, ve které studenti zkoušejí podnikání v praxi — od výroby a marketingu po ekonomiku a účetnictví. Členové týmu se s novými ročníky mění, zaměření na technologie a reklamu zůstává.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="timeline-year">2023</span>
+          <div>
+            <h3>Začíná školní firma</h3>
+            <p>Prestika zahájila činnost na SPŠ elektrotechniky a informatiky Ostrava v rámci projektu TPA. Jejím cílem bylo přenést výuku podnikání do skutečného provozu.</p>
+            <a class="history-source" href="https://www.spseiostrava.cz/cs/component/jdownloads/?Itemid=101&amp;catid=43&amp;id=646&amp;m=0&amp;task=download.send">Výroční zpráva SPŠEI za rok 2023 <span aria-hidden="true">↗</span></a>
+          </div>
+        </li>
+        <li>
+          <span class="timeline-year">2024</span>
+          <div>
+            <h3>První digitální projekty</h3>
+            <p>Dobová zpráva popisuje betaverzi aplikace VizEval pro hodnocení výuky. Studenti tehdy připravovali její pilotní ověření na třech krajských středních školách a nabízeli také weby a reklamní předměty.</p>
+            <a class="history-source" href="https://polar.cz/zpravy/ostrava/ostrava-mesto/11000041889/studenti-ostravske-elektrotechnicke-prumyslovky-zalozili-firmu-a-maji-nove-ucebny">Reportáž z března 2024 <span aria-hidden="true">↗</span></a>
+          </div>
+        </li>
+        <li>
+          <span class="timeline-year">2025</span>
+          <div>
+            <h3>Činnost pokračuje</h3>
+            <p>Výroční zprávy školy ukazují růst výnosů z činnosti: z 77,9 tisíce Kč v roce 2024 na 115,1 tisíce Kč v roce 2025. Prestika tak pokračovala jako fungující školní firma, ne jen jako jednorázový projekt.</p>
+            <a class="history-source" href="https://www.spseiostrava.cz/cs/component/jdownloads/?Itemid=101&amp;catid=43&amp;id=764&amp;m=0&amp;task=download.send">Výroční zpráva SPŠEI za rok 2024 <span aria-hidden="true">↗</span></a>
+            <a class="history-source" href="https://www.spseiostrava.cz/cs/component/jdownloads/?Itemid=101&amp;catid=43&amp;id=867&amp;m=0&amp;task=download.send">Výroční zpráva SPŠEI za rok 2025 <span aria-hidden="true">↗</span></a>
+          </div>
+        </li>
+        <li>
+          <span class="timeline-year">2026</span>
+          <div>
+            <h3>Od poptávky po hotový výrobek</h3>
+            <p>Zpráva Moravskoslezské Technologické Akademie zachycuje studenty při řízení celého procesu: komunikují se zákazníky, navrhují a vyrábějí produkty a zajišťují jejich dodání. Při výrobě využívají 3D tisk, lisování i sublimaci.</p>
+            <a class="history-source" href="https://m-ta.cz/skolni-firma-prestika-na-spsei-ostrava-podnikavost-v-realne-praxi/">Článek MTA z února 2026 <span aria-hidden="true">↗</span></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Informace o školní firmě a projektu vycházejí z dodaného textového podkladu. -->
+    <section class="about-section" id="o-nas" aria-labelledby="about-title">
+      <div class="about-mark" aria-hidden="true"><span>PRESTIKA</span><b>23</b><span>STUDENTSKÁ FIRMA</span></div>
+      <div class="about-copy">
+        <p class="eyebrow">Kdo za tím stojí</p>
+        <h2 id="about-title">Učíme se praxí.<br><span>Tvoříme pro vás.</span></h2>
+        <p>Prestika je studentská firma, která vznikla v roce 2023 v rámci projektu TPA — Inovační centrum pro transformaci vzdělávání. Podnikání poznáváme přímo v praxi: od výroby a marketingu až po ekonomiku a účetnictví.</p>
+        <p>Studentské týmy se v průběhu času mění, ale naše zaměření zůstává: kvalitní služby v informačních technologiích a reklamě. Tvorbu webů a rezervačních systémů doplňujeme kreativním 3D tiskem a gravírováním.</p>
+        <a class="text-link" href="#kontakt">Máte nápad? Ozvěte se <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <!-- Registrační údaje projektu jsou uvedeny přesně podle dodaného dokumentu. -->
+    <section class="project-strip" aria-label="Informace o projektu TPA">
+      <div>
+        <span class="project-symbol" aria-hidden="true">✳</span>
+        <div><strong>Vznik firmy podpořil projekt TPA</strong><p>Inovační centrum pro transformaci vzdělávání · Registrační číslo CZ.10.03.01/00/22_003/0000072</p></div>
+      </div>
+      <img src="img/mta.png" alt="Loga partnerů projektu" loading="lazy">
+    </section>
+
+    <!-- Kontaktní údaje přebíráme z dodané vizitky školní firmy. -->
+    <section class="contact-section" id="kontakt" aria-labelledby="contact-title">
+      <p class="eyebrow">Máte projekt v hlavě?</p>
+      <h2 id="contact-title">Pojďme mu dát<br><span>jedničku.</span></h2>
+      <p>Rádi s vámi probereme web, výrobu na míru nebo reklamní předměty.</p>
+      <a class="button button-light" href="mailto:info@prestika.cz">info@prestika.cz <span aria-hidden="true">↗</span></a>
+      <address>Kratochvílova 7 · 702 00 Moravská Ostrava a Přívoz</address>
+    </section>
+  </main>
+
+  <!-- Patička uzavírá stránku a ponechává povinnou publicitu projektu viditelnou. -->
+  <footer class="site-footer"><p>Od nápadu k realizaci. © 2026</p></footer>
+</body>
 </html>
