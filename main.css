@@ -900,6 +900,72 @@ p {
   }
 }
 
+.gallery-section {
+  padding-top: 96px;
+  padding-bottom: 72px;
+}
+
+.gallery-heading {
+  margin-bottom: 40px;
+}
+
+.gallery-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.gallery-heading h2 span {
+  color: var(--accent-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
+  gap: 14px;
+}
+
+.gallery-item {
+  min-width: 0;
+  margin: 0;
+  background: var(--surface-product);
+  border-radius: var(--radius-medium);
+}
+
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(4) {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: black solid 4px;
+  border-radius: 15px;
+}
+
+@media (max-width: 800px) {
+  .gallery-section {
+    padding: 64px 22px 56px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-auto-rows: 150px;
+    gap: 8px;
+  }
+}
+
 :root[data-theme="dark"] .brand img {
   filter: invert(1) brightness(1.2);
 }
@@ -1098,3 +1164,64 @@ p {
   }
 
 }
+
+.kontaktyLogo{
+   width: 24px;
+    height: 24px;
+    font-size: 24px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+
+
+.contact-section .button-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    margin: 5px;
+}
+
+.contact-section .kontaktyLogo {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 65px 20px 60px;
+    }
+
+    .contact-section .button-light {
+        display: flex;
+        width: 100%;
+        max-width: 360px;
+        min-height: 54px;
+        margin: 0 auto 12px;
+        padding: 12px 18px;
+        gap: 12px;
+        font-size: 0.95rem;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .contact-section .kontaktyLogo {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-section .button-light span {
+        margin-left: auto;
+    }
+
+    .contact-section address {
+        max-width: 320px;
+        margin: 22px auto 0;
+        line-height: 1.6;
+    }
+}
+
