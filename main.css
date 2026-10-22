@@ -601,6 +601,7 @@ p {
   gap: clamp(45px, 9vw, 120px);
   padding: 100px max(7vw, calc((100vw - 1160px) / 2));
   background: var(--surface-muted);
+  text-align: justify;
 }
 
 .about-mark {
@@ -768,6 +769,7 @@ p {
 .history-section {
   padding: 88px max(7vw, calc((100vw - 1160px) / 2));
   background: var(--surface);
+  text-align: justify;
 }
 
 .history-heading {
