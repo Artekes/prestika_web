@@ -13,7 +13,7 @@ if (catalogDownload) {
 
 if (typeof GLightbox === "function") {
   GLightbox({
-    selector: ".product-lightbox-link",
+    selector: ".product-lightbox-link, .gallery-lightbox-link",
     touchNavigation: true,
     keyboardNavigation: true,
     loop: false,
