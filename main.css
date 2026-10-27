@@ -128,7 +128,7 @@ img {
   gap: 56px;
   overflow: hidden;
   margin: auto;
-  padding: 76px max(7vw, calc((100vw - 1160px) / 2)) 82px;
+  padding: 76px clamp(32px, calc((100vw - 1160px) / 2), 140px) 82px;
 }
 
 .hero::before {
