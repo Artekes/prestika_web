@@ -943,10 +943,12 @@ p {
   border-radius: var(--radius-medium);
 }
 
-.gallery-item:nth-child(1),
-.gallery-item:nth-child(4) {
+/* bylo tady toto, smazáno, kdyby bylo potřeba pro nějaký item prodloužit, odkomentovat a přepsat
+.gallery-item:nth-child(1) {
   grid-row: span 2;
 }
+
+*/
 
 .gallery-lightbox-link {
   display: block;
